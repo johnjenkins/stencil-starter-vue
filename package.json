@@ -8,7 +8,7 @@
     "start:vue-wrapper": "pnpm --filter @example/stencil-lib-vue run start",
     "start:vue-app": "pnpm --filter vue-app run start",
     "start:vue-app:wait": "wait-on packages/stencil-lib-vue/dist/index.js && pnpm run start:vue-app",
-    "start:reload-trigger": "chokidar 'packages/stencil-lib-vue/dist/**/*' 'packages/stencil-lib/dist/**/*.js' 'packages/stencil-lib/loader/**/*.js' -c 'touch packages/vue-app/src/main.ts'",
+    "start:reload-trigger": "SHELL=/bin/sh chokidar 'packages/stencil-lib-vue/dist/**/*' 'packages/stencil-lib/dist/**/*.js' 'packages/stencil-lib/loader/**/*.js' -c 'touch packages/vue-app/src/main.ts'",
     "build": "pnpm run build:stencil && pnpm run build:vue-wrapper && pnpm run build:vue-app",
     "build:stencil": "pnpm --filter @example/stencil-lib run build",
     "build:vue-wrapper": "pnpm --filter @example/stencil-lib-vue run build",
