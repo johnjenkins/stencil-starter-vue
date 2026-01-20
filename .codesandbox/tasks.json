@@ -2,8 +2,8 @@
   // These tasks will run in order when initializing your CodeSandbox project.
   "setupTasks": [
     {
-      "command": "pnpm install",
-      "name": "Installing Dependencies"
+      "name": "Installing Dependencies",
+      "command": "pnpm install"
     }
   ],
 
@@ -12,52 +12,46 @@
     "start": {
       "name": "start",
       "command": "pnpm start",
-      "runAtStart": true
+      "runAtStart": true,
+      "preview": {
+        "port": 5173
+      }
     },
     "start:stencil": {
       "name": "start:stencil",
-      "command": "pnpm start:stencil",
-      "runAtStart": false
+      "command": "pnpm start:stencil"
     },
     "start:angular-wrapper": {
       "name": "start:angular-wrapper",
-      "command": "pnpm start:angular-wrapper",
-      "runAtStart": false
+      "command": "pnpm start:angular-wrapper"
     },
     "start:angular-app": {
       "name": "start:angular-app",
-      "command": "pnpm start:angular-app",
-      "runAtStart": false
+      "command": "pnpm start:angular-app"
     },
     "start:angular-app:wait": {
       "name": "start:angular-app:wait",
-      "command": "pnpm start:angular-app:wait",
-      "runAtStart": false
+      "command": "pnpm start:angular-app:wait"
     },
     "start:reload-trigger": {
       "name": "start:reload-trigger",
-      "command": "pnpm start:reload-trigger",
-      "runAtStart": false
+      "command": "pnpm start:reload-trigger"
     },
     "build": {
       "name": "build",
-      "command": "pnpm build",
-      "runAtStart": false
+      "command": "pnpm build"
     },
     "build:stencil": {
       "name": "build:stencil",
-      "command": "pnpm build:stencil",
-      "runAtStart": false
+      "command": "pnpm build:stencil"
     },
     "build:angular-wrapper": {
       "name": "build:angular-wrapper",
-      "command": "pnpm build:angular-wrapper",
-      "runAtStart": false
+      "command": "pnpm build:angular-wrapper"
     },
     "build:angular-app": {
       "name": "build:angular-app",
-      "command": "pnpm build:angular-app",
-      "runAtStart": false
+      "command": "pnpm build:angular-app"
     }
   }
 }
