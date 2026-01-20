@@ -1,0 +1,38 @@
+{
+  "name": "@example/stencil-lib-vue",
+  "version": "0.0.1",
+  "description": "Vue wrappers for @example/stencil-lib",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "start": "vite build --watch"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0",
+    "@example/stencil-lib": "workspace:*"
+  },
+  "dependencies": {
+    "@example/stencil-lib": "workspace:*",
+    "@stencil/vue-output-target": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "vue": "^3.5.0",
+    "vite": "^6.0.0",
+    "typescript": "~5.6.0"
+  },
+  "license": "MIT"
+}

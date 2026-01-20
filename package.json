@@ -1,0 +1,26 @@
+{
+  "name": "stencil-vue-repro",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "pnpm run build:stencil && pnpm run build:vue-wrapper && concurrently -n stencil,vue-wrapper,reload,vue-app -c blue,green,yellow,magenta \"pnpm run start:stencil\" \"pnpm run start:vue-wrapper\" \"pnpm run start:reload-trigger\" \"pnpm run start:vue-app:wait\"",
+    "start:stencil": "pnpm --filter @example/stencil-lib run start",
+    "start:vue-wrapper": "pnpm --filter @example/stencil-lib-vue run start",
+    "start:vue-app": "pnpm --filter vue-app run start",
+    "start:vue-app:wait": "wait-on packages/stencil-lib-vue/dist/index.js && pnpm run start:vue-app",
+    "start:reload-trigger": "chokidar 'packages/stencil-lib-vue/dist/**/*' 'packages/stencil-lib/dist/**/*.js' 'packages/stencil-lib/loader/**/*.js' -c 'touch packages/vue-app/src/main.ts'",
+    "build": "pnpm run build:stencil && pnpm run build:vue-wrapper && pnpm run build:vue-app",
+    "build:stencil": "pnpm --filter @example/stencil-lib run build",
+    "build:vue-wrapper": "pnpm --filter @example/stencil-lib-vue run build",
+    "build:vue-app": "pnpm --filter vue-app run build"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.0.0",
+    "wait-on": "^9.0.3"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
