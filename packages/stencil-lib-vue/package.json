@@ -17,8 +17,8 @@
     "dist/"
   ],
   "scripts": {
-    "build": "vite build",
-    "start": "vite build --watch"
+    "build": "tsc",
+    "start": "tsc --watch"
   },
   "peerDependencies": {
     "vue": ">=3.0.0",

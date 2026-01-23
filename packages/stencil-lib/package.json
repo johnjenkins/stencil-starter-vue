@@ -18,6 +18,10 @@
       "types": "./loader/index.d.ts",
       "import": "./loader/index.js",
       "require": "./loader/index.cjs.js"
+    },
+    "./components/*.js": {
+      "types": "./dist/types/components/*.d.ts",
+      "import": "./dist/components/*.js"
     }
   },
   "files": [
